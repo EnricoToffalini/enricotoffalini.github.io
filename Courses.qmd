@@ -9,7 +9,7 @@ This page collects the main courses and open materials I make publicly available
 ---
 
 <details>
-<summary><p style="font-size:25px;">Basics of R for Data Science (PhD level) ![English](images/english.png){width=18px}</p></summary>
+<summary><p style="font-size:25px;">Basics of R for Data Science ![English](images/english.png){width=18px}</p></summary>
 <br>
 
 **Course website**: <a href="https://enricotoffalini.github.io/Basics-R/" target="_blank">https://enricotoffalini.github.io/Basics-R/</a>
@@ -38,7 +38,7 @@ Introductory, hands-on course on R for PhD students in Psychological Sciences. T
 
 <details>
 <summary><p style="font-size:25px;">
-  Basics of Python for Data Science (PhD level) ![English](images/english.png){width=18px} </p>
+  Basics of Python for Data Science ![English](images/english.png){width=18px} </p>
 </summary>
 
 <br>
