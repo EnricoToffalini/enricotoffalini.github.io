@@ -12,6 +12,9 @@ website:
       - href: https://enricotoffalini.github.io/slides/
         text: Slides
         target: _blank
+      - href: https://enricotoffalini.github.io/blog/
+        text: Blog
+        target: _blank
 
 format:
   html:
@@ -23,6 +26,3 @@ format:
       - brand
     css: styles.css
     toc: true
-
-
-
