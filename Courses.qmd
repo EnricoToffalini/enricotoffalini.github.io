@@ -46,7 +46,7 @@ Introductory, hands-on course on R for data science. The focus is on using R as 
 **Course website**: <a href="https://enricotoffalini.github.io/Basics-Python/" target="_blank">https://enricotoffalini.github.io/Basics-Python/</a>
 
 **Short description**  
-Short (10-hour) PhD-level introductory course on Python for data science. The idea is to give students (who ideally already use R) a practical entry point into Python, with a focus on tools that R does not cover as easily.
+Short (10-hour) PhD-level introductory course on Python for data science. The idea is to give learners (who ideally already use R) a practical entry point into Python, with a focus on tools that R does not cover as easily.
 
 **Open materials available**
 
