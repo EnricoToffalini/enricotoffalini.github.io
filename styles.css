@@ -1,0 +1,49 @@
+.navbar{
+  background-color: #760000 !important;
+}
+
+a {
+  color: #760000 !important;
+}
+
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-brand,
+.navbar a {
+  font-size: 22px !important;
+  color: #ffffff !important;
+}
+
+::selection {
+  background: #760000;
+  color: #ffffff;
+}
+
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-brand:hover {
+  color: #f0f0f0 !important;
+}
+
+.navbar-toggler {
+  border-color: transparent !important;
+}
+
+.navbar-toggler-icon {
+  background-image: none !important;
+}
+
+.navbar-toggler-icon::before {
+  content: "\2630";
+  font-size: 2rem;
+  color: #ffffff !important;
+}
+
+.navbar .bi,
+.navbar svg {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.navbar .quarto-search-icon {
+  color: #ffffff !important;
+}

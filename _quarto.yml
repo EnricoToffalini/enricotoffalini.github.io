@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: Courses.qmd
+        text: Courses
+      - href: https://enricotoffalini.github.io/slides/
+        text: Slides
+        target: _blank
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

@@ -1,0 +1,183 @@
+---
+toc: false
+---
+
+# Courses and Open Teaching materials
+
+This page collects the main courses and open materials I make publicly available. Whenever possible, slides, exercises, and code are freely accessible so that students, teachers, and researchers can reuse or adapt them.
+
+---
+
+<details>
+<summary><p style="font-size:25px;">Basics of R for Data Science (PhD level) ![English](images/english.png){width=18px}</p></summary>
+<br>
+
+**Course website**: <a href="https://enricotoffalini.github.io/Basics-R/" target="_blank">https://enricotoffalini.github.io/Basics-R/</a>
+
+**Short description**  
+Introductory, hands-on course on R for PhD students in Psychological Sciences. The focus is on using R as a practical tool for data handling, visualization, and basic statistical modeling, with a strong emphasis on reproducible workflows.
+
+**What you can find here**
+
+- 📑 **Slides and lecture notes**  
+  - Conceptual slides introducing R as a language for data science  
+  - Step-by-step examples to reproduce directly in R / RStudio  
+
+- 🧪 **Hands-on exercises**  
+  - Guided exercises for getting familiar with R syntax, data structures, and basic plotting  
+  - Small data sets used in class, ready to be reused in other courses or self-study
+
+**Who this is useful for**
+
+- PhD students and early-career researchers who need a **compact, applied** introduction to R  
+- Teachers who want **ready-made R exercises and examples** to integrate in their own courses  
+
+</details>
+
+---
+
+<details>
+<summary><p style="font-size:25px;">
+  Basics of Python for Data Science (PhD level) ![English](images/english.png){width=18px} </p>
+</summary>
+
+<br>
+
+**Course website**: <a href="https://enricotoffalini.github.io/Basics-Python/" target="_blank">https://enricotoffalini.github.io/Basics-Python/</a>
+
+**Short description**  
+Short (10-hour) PhD-level introductory course on Python for data science, offered within the PhD in Psychological Sciences at the University of Padova. The idea is to give students who already use R a practical entry point into Python, with a focus on tools that R does not cover as easily.
+
+**Open materials available**
+
+- 📑 **Slides** (fully open)
+  - *Intro to This Course, aka Why We Should Use Python*  
+  - *Getting Started: IDEs, Operations, Basic Types of Data*  
+  - *Virtual Environments, Packages, Import/Export*  
+  - *Basic Syntax, Typing, Indexing, Differences with R*  
+  - *Basics of Data Science: Intro to NumPy and pandas*  
+  - *Programming: Conditionals, Loops, Custom Functions*
+
+- 🧪 **Exercises and tutorials**
+  - First steps in Python and in NumPy / pandas  
+  - Programming exercises that mix control flow with real data tasks  
+  - Extended exercises on:
+    - Clustering and simulation of clusters  
+    - Sentiment analysis with Hugging Face transformers  
+    - Text embeddings, PCA, clustering, and simple text classification  
+    - Examples of language, speech, and image processing  
+    - A mini-tutorial on using AI / LLMs as research assistants in systematic reviews  
+
+- 💻 **Code and reproducible material**
+All materials are hosted publicly on GitHub and are designed so that students can adapt scripts and notebooks to their own research problems  
+
+**Who this is useful for**
+
+- PhD students who already know R and want a **practical bridge to Python**  
+- Instructors who want **ready-to-use, research-oriented Python notebooks** for data science, NLP, and ML  
+
+</details>
+
+---
+
+<details>
+<summary><p style="font-size:25px;">General Psychology (MOOC on Federica Web Learning) ![English](images/english.png){width=18px}</p>
+</summary>
+
+<br>
+
+**Course page** (free registration required): <a href="https://lms.federica.eu/course/view.php?id=889" target="_blank">https://lms.federica.eu/course/view.php?id=889</a>
+
+**Short description**  
+Online course in General Psychology hosted on **Federica Web Learning**. The MOOC covers most core topics of general psychology and is **taught in English**.
+
+In this course, my modules focus on:
+
+- Methodology of research  
+- Learning and conditioning  
+- Memory  
+- Language and thought  
+- Motivation  
+- Intelligence  
+
+Within the same MOOC, another professor covers:
+
+- History of psychology  
+- Perception  
+- Time perception  
+- Attention  
+- Emotion  
+- Personality  
+
+**What you find in the course**
+
+- 🎥 **Video lectures** with concise explanations and examples  
+- 📝 **Self-assessment quizzes** to monitor understanding  
+- 📚 **Supplementary materials**, such as short texts or reading suggestions linked to modules  
+
+**How this can be useful**
+
+- As a **fully online, self-paced introduction** to general psychology in English  
+- As support for university courses in General Psychology  
+- As a structured revision tool for students and professionals  
+
+</details>
+
+---
+
+<details>
+<summary><p style="font-size:25px;">
+   Psicologia dell’Intelligenza Umana ![Italiano](images/italian.png){width=18px}</p>
+</summary>
+
+<br>
+
+**Sito del progetto e del corso IN COSTRUZIONE**: <a href="https://enricotoffalini.github.io/psicologia-intelligenza" target="_blank">https://enricotoffalini.github.io/psicologia-intelligenza</a> 
+
+**Che cos’è questo progetto**
+
+Questo sito è un **libro online in costruzione** e, allo stesso tempo, uno spazio che raccoglie materiali didattici e divulgativi sulla psicologia dell’intelligenza umana, pensato per:
+
+- studentesse e studenti universitari  
+- psicologhe e psicologi che usano test cognitivi nella pratica  
+- chiunque voglia capire meglio cosa significhi “essere intelligenti”
+
+**Contenuti principali**
+
+- 📘 **Capitoli tematici**  
+  - Storia e teorie classiche e contemporanee dell’intelligenza  
+  - Basi biologiche e genetiche delle differenze individuali  
+  - Misurazione psicometrica, QI, e principali test cognitivi  
+  - Fenomeni sociali e culturali legati all’intelligenza  
+
+- 💥 **Temi avanzati e critici**
+  - Neurodiversità, plusdotazione, funzionamento intellettivo limite e disabilità  
+  - Interpretazione dei punteggi, limiti dei test, rischi di uso superficiale dei risultati  
+
+- 💬 **Divulgazione**
+  - Sezioni come *Domande & Risposte* e brevi approfondimenti su temi specifici  
+  - Ad esempio, una pagina dedicata all’**Effetto Flynn** e alla variazione del QI nel tempo  
+
+**A chi potrà servire**
+
+- Studenti e studentesse di corsi di **Psicologia dell’Intelligenza** e affini  
+- Professionisti che desiderano una **base teorica solida** per interpretare i test cognitivi  
+- Docenti che cercano **materiale aperto in italiano** su intelligenza, QI e misurazione  
+
+</details>
+
+---
+
+## Reuse of materials
+
+- ✅ You are welcome to **link to these course pages**, embed specific exercises in your own syllabi, or recommend them to students.  
+- ✅ Slides and code examples are generally fine to reuse for **non-commercial teaching**, ideally with a short acknowledgement (but for the MOOC on Federica Web Learning, please refer to the Federica license before copying any part!).  
+- ❓ If you plan a more extensive reuse (for example, translating large parts of material, or integrating them into a paid course), it's generally fine, but please get in touch first.
+
+---
+
+## Contact
+
+If you are interested in using or adapting these materials for your course, or if you have suggestions for improvements: <enrico.toffalini@unipd.it>
+
+I am always happy to see these resources reused, remixed, and improved, especially when they help promote better methods and critical thinking in psychological science.
