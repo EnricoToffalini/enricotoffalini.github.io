@@ -15,7 +15,7 @@ This page collects the main courses and open materials I make publicly available
 **Course website**: <a href="https://enricotoffalini.github.io/Basics-R/" target="_blank">https://enricotoffalini.github.io/Basics-R/</a>
 
 **Short description**  
-Introductory, hands-on course on R for PhD students in Psychological Sciences. The focus is on using R as a practical tool for data handling, visualization, and basic statistical modeling, with a strong emphasis on reproducible workflows.
+Introductory, hands-on course on R for data science. The focus is on using R as a practical tool for data handling, visualization, and basic statistical modeling, with a strong emphasis on reproducible workflows.
 
 **What you can find here**
 
@@ -46,7 +46,7 @@ Introductory, hands-on course on R for PhD students in Psychological Sciences. T
 **Course website**: <a href="https://enricotoffalini.github.io/Basics-Python/" target="_blank">https://enricotoffalini.github.io/Basics-Python/</a>
 
 **Short description**  
-Short (10-hour) PhD-level introductory course on Python for data science, offered within the PhD in Psychological Sciences at the University of Padova. The idea is to give students who already use R a practical entry point into Python, with a focus on tools that R does not cover as easily.
+Short (10-hour) PhD-level introductory course on Python for data science. The idea is to give students (who ideally already use R) a practical entry point into Python, with a focus on tools that R does not cover as easily.
 
 **Open materials available**
 
