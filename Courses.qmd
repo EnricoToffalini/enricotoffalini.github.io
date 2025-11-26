@@ -134,8 +134,6 @@ Within the same MOOC, another professor covers:
 
 **Sito del progetto e del corso IN COSTRUZIONE**: <a href="https://enricotoffalini.github.io/psicologia-intelligenza" target="_blank">https://enricotoffalini.github.io/psicologia-intelligenza</a> 
 
-**Che cos’è questo progetto**
-
 Questo sito è un **libro online in costruzione** e, allo stesso tempo, uno spazio che raccoglie materiali didattici e divulgativi sulla psicologia dell’intelligenza umana, pensato per:
 
 - chiunque voglia capire meglio cosa significhi “essere intelligenti”
@@ -163,6 +161,39 @@ Questo sito è un **libro online in costruzione** e, allo stesso tempo, uno spaz
 - Studenti e studentesse di corsi di **Psicologia dell’Intelligenza** e affini  
 - Professionisti che desiderano una **base teorica solida** per interpretare i test cognitivi  
 - Docenti che cercano **materiale aperto in italiano** su intelligenza, QI e misurazione  
+
+</details>
+
+---
+
+<details>
+<summary><p style="font-size:25px;">
+  Psicologia dell’Olfatto e del Gusto ![Italiano](images/italian.png){width=18px}
+</p></summary>
+
+<br>
+
+**Sito del corso e materiali aperti**: <a href="https://enricotoffalini.github.io/Olfatto-e-Gusto/" target="_blank">https://enricotoffalini.github.io/Olfatto-e-Gusto/</a>
+
+Breve percorso introduttivo sulla **psicologia dell’olfatto**, sulla **percezione multisensoriale dei sapori**, e sul **comportamento umano in relazione ai sensi chimici**. Il corso affronta:
+
+- il ruolo dell’olfatto nella vita quotidiana  
+- le basi anatomiche e fisiologiche dei sensi chimici  
+- i principali disturbi dell’olfatto e le loro conseguenze sulla qualità di vita  
+- le relazioni tra olfatto, comportamento sociale ed emozioni  
+- l’integrazione tra olfatto, gusto, vista e udito nella percezione del sapore  
+- applicazioni alla **psicologia del vino**, al **marketing olfattivo** e alle differenze individuali e culturali  
+
+**Materiali disponibili**
+
+- 📑 **Slide in accesso aperto**  
+  Tutte le diapositive del corso sono disponibili online e possono essere riutilizzate (con citazione) per attività didattiche, divulgative o di autoformazione.
+
+**A chi può essere utile**
+
+- Persone curiose di capire meglio come gli odori e i sapori influenzano il comportamento e le decisioni quotidiane; 
+- Studentesse e studenti di psicologia, neuroscienze e scienze sensoriali; 
+- Docenti che cercano **materiali pronti all’uso** per lezioni su olfatto, gusto e percezione multisensoriale.
 
 </details>
 
