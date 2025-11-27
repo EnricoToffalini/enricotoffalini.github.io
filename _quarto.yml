@@ -15,6 +15,8 @@ website:
       - href: https://enricotoffalini.github.io/blog/
         text: Blog
         target: _blank
+      - href: contact.qmd
+        text: contact
 
 format:
   html:
