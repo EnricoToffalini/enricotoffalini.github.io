@@ -1,0 +1,41 @@
+---
+toc: false
+---
+
+# CV / Bio
+
+## At a glance
+
+- **Current position**: Associate Professor, <a href="https://www.dpg.unipd.it/" target="_blank">Department of General Psychology</a>, University of Padova, Italy.  
+- **Previous positions**:  
+  - RTD-B (2022–2025); RTD-A (2021–2022); Postdoctoral researcher (2016–2021). 
+- **PhD**: <a href="https://phd.psy.unipd.it/alumni/" target="_blank">Psychological Sciences</a>, University of Padova (2016)  
+- **Research areas**:  
+  - Dimensional approaches to neurodevelopmental disorders.
+  - Intelligence and cognitive abilities in typical and atypical development.  
+  - Meta-research and quantitative methodology.  
+  - Power/design analysis and research planning.  
+- **Publications**: 90+ peer-reviewed papers  
+- **Funding**: PI / Co-PI of PRIN and PRIN-PNRR projects (2023-2026).  
+- **Research groups**: <a href="https://www.memoryandlearninglab.it/" target="_blank">Memory & Learning Lab</a> · <a href="https://psicostat.dpss.psy.unipd.it/" target="_blank">PsicoStat</a>
+
+## Full CV
+
+You can view or download the full CV (Italian, PDF) here:
+
+- <a href="assets/ToffaliniCV.pdf" target="_blank">Download full CV (PDF) (in Italian)</a>
+
+<div class="cv-preview" style="margin-top: 1.5rem;">
+  <iframe
+    src="assets/ToffaliniCV.pdf"
+    width="100%"
+    height="650"
+    style="border: 1px solid #ccc; border-radius: 4px;">
+  </iframe>
+</div>
+
+## Short bio
+
+Enrico Toffalini is an Associate Professor of General Psychology at the University of Padova, where he previously served as a tenure-track Senior Assistant Professor (RTD-B). His research focuses on intelligence and individual differences in cognitive abilities in typical and atypical development, individual differences, and dimensional approaches to neurodevelopmental disorders. He also works extensively on quantitative methods, meta-research, and design/power analysis, contributing methodological tools aimed at improving psychological science.
+
+He has authored more than 90 peer-reviewed publications and has collaborated with research groups in the United Kingdom, the United States, and Norway, among others. Enrico is Principal Investigator or Co-PI of national projects funded by the Italian Ministry of Universities and Research (PRIN and PRIN-PNRR), and is an active member of the Memory & Learning Lab and the PsicoStat group at the University of Padova.

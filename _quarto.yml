@@ -15,6 +15,9 @@ website:
       - href: https://enricotoffalini.github.io/blog/
         text: Blog
         target: _blank
+      - href: CV.qmd
+        text: CV
+        target: _blank
       - href: contact.qmd
         text: contact
 
