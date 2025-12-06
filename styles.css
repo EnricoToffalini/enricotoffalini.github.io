@@ -1,28 +1,34 @@
+/* main navbar color */
 .navbar{
-  background-color: #760000 !important;
+  background-color: #760000 !important; 
 }
 
+/* default links */
 a {
-  color: #760000 !important;
+  color: #760000 !important; 
 }
 
+/* navbar links & brand */
 .navbar .navbar-nav .nav-link,
 .navbar .navbar-brand,
 .navbar a {
-  font-size: 22px !important;
-  color: #ffffff !important;
+  font-size: 22px !important; 
+  color: #ffffff !important;  
 }
 
+/* text selection highlight */
 ::selection {
   background: #760000;
   color: #ffffff;
 }
 
+/* hover text color */
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-brand:hover {
   color: #f0f0f0 !important;
 }
 
+/* toggler button (mobile) */
 .navbar-toggler {
   border-color: transparent !important;
 }
@@ -32,11 +38,12 @@ a {
 }
 
 .navbar-toggler-icon::before {
-  content: "\2630";
+  content: "\2630"; 
   font-size: 2rem;
   color: #ffffff !important;
 }
 
+/* icons inside navbar */
 .navbar .bi,
 .navbar svg {
   color: #ffffff !important;
@@ -46,4 +53,46 @@ a {
 
 .navbar .quarto-search-icon {
   color: #ffffff !important;
+}
+
+/* NAVBAR ENHANCEMENTS */
+
+.navbar .navbar-nav .nav-link {
+  padding: 6px 16px;
+  border-radius: 10px; 
+  position: relative;
+  transition:
+    background-color 1.1s cubic-bezier(0.19, 1, 0.22, 1),
+    color 0.8s ease,
+    border-radius 1.1s cubic-bezier(0.19, 1, 0.22, 1),
+    transform 0.9s cubic-bezier(0.19, 1, 0.22, 1),
+    box-shadow 0.9s cubic-bezier(0.19, 1, 0.22, 1);
+}
+/* strong pill, glow and slight lift on hover */
+.navbar .navbar-nav .nav-link:hover {
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.25),
+    rgba(255, 255, 255, 0.05)
+  );
+  color: #ffffff !important;
+  border-radius: 999px;                 /* full pill */
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.4);
+}
+/* active page: settles back to less rounded but still highlighted */
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus {
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff !important;
+  border-radius: 14px;                  /* less rounded than hover pill */
+  transform: scale(1.01);               /* gentle emphasis */
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+}
+/* keep active shape when hovered on the active page */
+.navbar .navbar-nav .nav-link.active:hover {
+  background-image: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  transform: translateY(-1px) scale(1.02);
 }
