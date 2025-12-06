@@ -17,7 +17,6 @@ website:
         target: _blank
       - href: CV.qmd
         text: CV
-        target: _blank
       - href: contact.qmd
         text: contact
 
