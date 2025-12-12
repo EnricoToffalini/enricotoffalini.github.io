@@ -20,11 +20,14 @@ about:
     - text: '<img src="images/ML.png" style="height: 1.2em; vertical-align: middle; margin-right: 0.25em;"> M&L'
       href: https://www.memoryandlearninglab.it/
       target: _blank
+    - text: '<img src="images/unipd.png" style="height: 1.2em; vertical-align: middle; margin-right: 0.25em;"> PhD.Psy'
+      href: https://phd.psy.unipd.it/
+      target: _blank
     - text: '<img src="images/sc.png" style="height: 1.2em; vertical-align: middle; margin-right: 0.25em;"> Scopus'
       href: https://www.scopus.com/authid/detail.uri?authorId=35273841300
       target: _blank
-    - text: '<img src="images/unipd.png" style="height: 1.2em; vertical-align: middle; margin-right: 0.25em;"> phd.psy'
-      href: https://phd.psy.unipd.it/
+    - text: '<img src="images/scholar.png" style="height: 1.2em; vertical-align: middle; margin-right: 0.25em;"> Scholar'
+      href: https://scholar.google.it/citations?hl=it&user=FcWDSi4AAAAJ&view_op=list_works&sortby=pubdate
       target: _blank
     - text: '<img src="images/rg.png" style="height: 1.2em; vertical-align: middle; margin-right: 0.25em;"> RG'
       href: https://www.researchgate.net/profile/Enrico-Toffalini
