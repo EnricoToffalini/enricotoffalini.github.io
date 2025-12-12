@@ -99,20 +99,20 @@ details[open] > summary{
 }
 
 .navbar .navbar-nav .nav-link:hover {
-  background-color: rgba(0,0,0,0.3); /* <-- now animates */
   color: #ffffff;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 30px rgba(255,255,255,0.2);
 }
 
 .navbar .navbar-nav .nav-link.active,
 .navbar .navbar-nav .nav-link:focus {
-  background-color: rgba(0,0,0,0.18);
+  background-color: rgba(255,255,255,0.15);
   color: #ffffff;
-  box-shadow: 4px 8px 12px rgba(0,0,0,0.4);
+  box-shadow: 4px 8px 12px rgba(0,0,0,0.3);
 }
 
 .navbar .navbar-nav .nav-link.active:hover {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(255,255,255,0.03);
+  
 }
 
 
@@ -127,53 +127,51 @@ details[open] > summary{
 }
 
 /* =========================================================
-   GLOW EFFECTS FOR NAVBAR LINKS
+   GLOW EFFECTS FOR NAVBAR LINKS (ring-only glow)
    ========================================================= */
 
-/* container (your nav-links already have position: relative) */
 .navbar .navbar-nav .nav-link {
-  z-index: 0; /* allow glow behind text */
+  z-index: 0;
   overflow: visible;
 }
 
-/* animated glow layer */
+/* ring glow layer */
 .navbar .navbar-nav .nav-link::before {
   content: '';
   position: absolute;
-  top: -3px;
-  left: -3px;
-  width: calc(100% + 6px);
-  height: calc(100% + 6px);
-  border-radius: 6px;
+  inset: -3px;              /* how far the glow extends */
+  border-radius: 8px;
 
   background: linear-gradient(
     45deg,
-     #760000, #960000,  #A60000,  #B60000,
-     #ff0000, #B60000, #A60000, #960000,  #760000
+    #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000
   );
-  background-size: 350%;
-
-  z-index: -1;        /* behind the button */
-  filter: blur(6px);  /* glowing halo */
-
-  opacity: 0;         /* hidden by default */
-  transition: opacity .5s ease-in-out;
-
+  background-size: 300%;
   animation: navbar-glow 20s linear infinite;
+
+  filter: blur(0px);        /* softness of the glow */
+  opacity: 0;
+  transition: opacity .35s ease-in-out;
+  z-index: -1;
+
+  /* punch a hole so the glow is ONLY around the border */
+  padding: 2px; /* thickness */
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
 }
 
-/* on hover → show glow */
+/* show ring on hover */
 .navbar .navbar-nav .nav-link:hover::before {
   opacity: 1;
 }
 
-/* on active/focus → also show glow */
+/* keep your choice: no glow for active/focus */
 .navbar .navbar-nav .nav-link.active::before,
 .navbar .navbar-nav .nav-link:focus::before {
   opacity: 0;
 }
 
-/* glow animation */
 @keyframes navbar-glow {
   0%   { background-position: 0 0; }
   50%  { background-position: 400% 0; }
