@@ -15,17 +15,24 @@ This page collects the main courses and open materials I make publicly available
 **Course website**: <a href="https://enricotoffalini.github.io/Basics-R/" target="_blank">https://enricotoffalini.github.io/Basics-R/</a>
 
 **Short description**  
-Introductory, hands-on course on R for data science. The focus is on using R as a practical tool for data handling, visualization, and basic statistical modeling, with a strong emphasis on reproducible workflows.
+Short (10-hour) introductory course on R for data science. The idea is to give learners a practical entry point into R, a language widely used in academic research and increasingly in applied data science, with emphasis on foundational tools and concepts that prepare students for future methodological courses/applications where R is routinely requested.
 
-**What you can find here**
+**Open materials available**
 
-- 📑 **Slides and lecture notes**  
-  - Conceptual slides introducing R as a language for data science  
-  - Step-by-step examples to reproduce directly in R / RStudio  
-
-- 🧪 **Hands-on exercises**  
-  - Guided exercises for getting familiar with R syntax, data structures, and basic plotting  
-  - Small data sets used in class, ready to be reused in other courses or self-study
+- 📑 Slides (fully open)
+  - *Intro to This Course, Getting Started with R*
+  - *Basic Operations, Basic Types of Data*
+  - *Environment, Packages, Functions, Import/Export*
+  - *Data Structures: Vectors*
+  - *Data Structures: Data Frames*
+  - *Data Structures: Factors, Lists, Matrices, Arrays*
+  - *Basics of Programming: If/Else, Iterations, Custom Functions* 
+- 🧪 Exercises and tutorials
+  - First steps in R
+  - Exercises on vectors and data frames
+  - Basics of programming with real data tasks
+  - Challenges that integrate core concepts from slides
+  - Additional optional exercises (e.g., word clouds, statistical data simulation, Monte Carlo simulations) for motivated learners
 
 **Who this is useful for**
 
