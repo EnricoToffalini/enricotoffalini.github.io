@@ -34,7 +34,7 @@ about:
       target: _blank
 format:
   html:
-    include-after-body: assets/footer.html
+    include-after-body: footer.html
 ---
 
 Associate Professor at the Department of General Psychology, University of Padova, Italy. Research interests include neurodevelopmental conditions, neurodiversity, human intelligence, meta-research, research designs and quantitative methods
