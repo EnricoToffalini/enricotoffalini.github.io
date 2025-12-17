@@ -32,6 +32,9 @@ about:
     - text: '<img src="images/rg.png" style="height: 1.2em; vertical-align: middle; margin-right: 0.25em;"> RG'
       href: https://www.researchgate.net/profile/Enrico-Toffalini
       target: _blank
+format:
+  html:
+    include-after-body: assets/footer.html
 ---
 
 Associate Professor at the Department of General Psychology, University of Padova, Italy. Research interests include neurodevelopmental conditions, neurodiversity, human intelligence, meta-research, research designs and quantitative methods

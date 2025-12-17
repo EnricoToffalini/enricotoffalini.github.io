@@ -165,6 +165,278 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
  <!-- /main -->
+
+
+<style>
+
+  :root {
+
+    --figurina-size: 50px;
+
+    --glow-radius: 10px;
+
+  }
+
+
+
+  /* Contenitore esterno: alone + fumetto */
+
+  .figurina-wrap {
+
+    display: inline-block;
+
+    position: relative;
+
+    transition: filter 0.25s ease;
+
+
+
+    /* valori di default (possono essere sovrascritti inline) */
+
+    --figurina-img: url("red.png");
+
+    --glow-color: rgba(255, 0, 0, 0.95);
+
+  }
+
+
+
+  /* Alone in hover (usa il colore variabile) */
+
+  .figurina-wrap:hover {
+
+    filter: drop-shadow(0 0 var(--glow-radius) var(--glow-color));
+
+  }
+
+
+
+  .figurina {
+
+    width: var(--figurina-size);
+
+    height: var(--figurina-size);
+
+    cursor: pointer;
+
+    transition: transform 0.25s ease;
+
+
+
+    /* immagine visibile */
+
+    background-image: var(--figurina-img);
+
+    background-size: contain;
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+
+
+    /* maschera che segue il contorno (alpha del PNG) */
+
+    -webkit-mask-image: var(--figurina-img);
+
+    mask-image: var(--figurina-img);
+
+    -webkit-mask-mode: alpha;
+
+    mask-mode: alpha;
+
+    -webkit-mask-size: contain;
+
+    mask-size: contain;
+
+    -webkit-mask-repeat: no-repeat;
+
+    mask-repeat: no-repeat;
+
+    -webkit-mask-position: center;
+
+    mask-position: center;
+
+
+
+    background-color: #ffffff;
+
+  }
+
+
+
+  /* Zoom solo sulla figurina */
+
+  .figurina-wrap:hover .figurina {
+
+    transform: scale(1.05);
+
+  }
+
+
+
+  /* Fumetto (testo preso da data-bubble) */
+
+  .figurina-wrap::after {
+
+    content: attr(data-bubble);
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    transform: translate(-50%, -120%) scale(0.95);
+
+    padding: 6px 10px;
+
+    background: #ffffff;
+
+    color: #333;
+
+    font-size: 14px;
+
+    border-radius: 999px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    z-index: 2;
+
+  }
+
+
+
+  /* Triangolino del fumetto */
+
+  .figurina-wrap::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+
+    transform: translate(-50%, -35%);
+
+    border-width: 8px 8px 0 8px;
+
+    border-style: solid;
+
+    border-color: #ffffff transparent transparent transparent;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.2s ease, transform 0.2s ease;
+
+    z-index: 1;
+
+  }
+
+
+
+  /* Mostra fumetto in hover */
+
+  .figurina-wrap:hover::after,
+
+  .figurina-wrap:hover::before {
+
+    opacity: 1;
+
+    transform: translate(-50%, -140%);
+
+  }
+
+
+
+  /* solo per spaziarle un po' */
+
+  .figurina-wrap + .figurina-wrap {
+
+    margin-left: 15px;
+
+  }
+
+</style>
+
+
+
+
+
+<div style="
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 3px;
+
+  text-align: center;
+
+  padding: 20px;
+
+">
+
+
+
+  <a href="https://filippogambarota.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('../images/power-rangers/black.png');
+
+              --glow-color: rgba(0, 0, 0, 0.95);" data-bubble="Filippo Gambarota"><a href="https://filippogambarota.github.io/" target="_blank">
+
+    <div class="figurina"></div></a>
+
+  </div>
+
+
+
+  <a href="https://mar-cald.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('../images/power-rangers/purple.png');
+
+              --glow-color: rgba(200, 0, 255, 0.95);" data-bubble="Margherita Calderan"><a href="https://mar-cald.github.io/" target="_blank">
+
+    <div class="figurina"></div></a>
+
+  </div>
+
+
+
+  <a href="https://feracotommaso.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('../images/power-rangers/green.png');
+
+              --glow-color: rgba(100, 150, 50, 0.95);" data-bubble="Tommaso Feraco"><a href="https://feracotommaso.github.io/" target="_blank">
+
+    <div class="figurina"></div></a>
+
+  </div>
+
+
+
+  <a href="https://enricotoffalini.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('../images/power-rangers/red.png');
+
+              --glow-color: rgba(220, 0, 0, 0.95);" data-bubble="Enrico Toffalini"><a href="https://enricotoffalini.github.io/" target="_blank">
+
+    <div class="figurina"></div></a>
+
+  </div>
+
+
+
+</div>
+
+
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {
