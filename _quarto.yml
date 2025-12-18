@@ -6,6 +6,7 @@ project:
 
 website:
   navbar:
+    logo: images/power-rangers/red-contour.png
     left:
       - href: index.qmd
         text: home
