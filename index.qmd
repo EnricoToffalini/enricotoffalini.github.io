@@ -39,3 +39,5 @@ format:
 
 Associate Professor at the Department of General Psychology, University of Padova, Italy. Research interests include neurodevelopmental conditions, neurodiversity, human intelligence, meta-research, research designs and quantitative methods
 
+<script data-goatcounter="https://enricotoffalini.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
