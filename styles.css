@@ -7,6 +7,9 @@
 a {
   color: #9a0000 !important; 
 }
+a:hover {
+  color: #333333 !important;
+}
 
 /* navbar links & brand */
 .navbar .navbar-nav .nav-link,
