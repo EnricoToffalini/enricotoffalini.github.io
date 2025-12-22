@@ -1,11 +1,11 @@
 /* main navbar color */
 .navbar{
-  background-color: #760000 !important; 
+  background-color: #9a0000 !important; 
 }
 
 /* default links */
 a {
-  color: #760000 !important; 
+  color: #9a0000 !important; 
 }
 
 /* navbar links & brand */
@@ -18,7 +18,7 @@ a {
 
 /* text selection highlight */
 ::selection {
-  background: #760000;
+  background: #9a0000;
   color: #ffffff;
 }
 
