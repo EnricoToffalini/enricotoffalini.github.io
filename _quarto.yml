@@ -10,7 +10,7 @@ website:
     type: overlay
   navbar:
     logo: images/power-rangers/red-contour.png
-    logo-href: "#"
+    logo-href: index.qmd
     left:
       - href: index.qmd
         text: home
