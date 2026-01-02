@@ -51,7 +51,6 @@ ul.task-list li input[type="checkbox"] {
     "/",
     "s"
   ],
-  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -79,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="#" class="navbar-brand navbar-brand-logo">
     <img src="./images/power-rangers/red-contour.png" alt="" class="navbar-logo">
     </a>
   </div>
@@ -171,6 +170,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
  <!-- /main -->
+
+
+<!-------------------------------------------------------------->
+
+<!-------------------------------------------------------------->
+
+
+
+<!-- CSS STYLE -->
+
 
 
 <style>
@@ -375,9 +384,231 @@ ul.task-list li input[type="checkbox"] {
 
   }
 
+  
+
+  /* Modal overlay styles */
+
+  .modal-overlay {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    z-index: 9999;
+
+    justify-content: center;
+
+    align-items: center;
+
+  }
+
+  
+
+  .modal-overlay.show {
+
+    display: flex;
+
+  }
+
+  
+
+  .modal-content {
+
+    background: white;
+
+    padding: 60px 80px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+    position: relative;
+
+    animation: modalPop 0.3s ease;
+
+  }
+
+  
+
+  @keyframes modalPop {
+
+    from { transform: scale(0.8); opacity: 0; }
+
+    to { transform: scale(1); opacity: 1; }
+
+  }
+
+  
+
+  .modal-close {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 20px;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    color: #999;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+  }
+
+  
+
+  .modal-close:hover {
+
+    color: #333;
+
+  }
+
+
+
+/* Overlay should scroll if content is taller than the viewport */
+
+.modal-overlay {
+
+  overflow-y: auto;
+
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+
+  padding: 20px;                    /* keeps content away from edges */
+
+}
+
+
+
+/* Modal box should never exceed screen height */
+
+.modal-content {
+
+  max-height: calc(100vh - 40px); /* viewport minus overlay padding */
+
+  overflow-y: auto;
+
+  max-width: 900px;
+
+  width: min(900px, 100%);
+
+  box-sizing: border-box;
+
+}
+
+
+
+/* Lock background scroll when modal is open */
+
+body.modal-open {
+
+  overflow: hidden;
+
+}
+
+
+
+  /* Larger size for modal */
+
+  .modal-overlay .figurina-wrap {
+
+    --figurina-size: 100px;
+
+    --glow-radius: 20px;
+
+  }
+
+  
+
+  .modal-overlay .figurina-wrap + .figurina-wrap {
+
+    margin-left: 0 !important;
+
+  }
+
+  
+
+  .modal-row {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 25px;  /* default desktop gap */
+
+  text-align: center;
+
+}
+
+
+
+/* Adapt figure size for modal when on phone */
+
+@media (max-width: 650px) {
+
+  .modal-row {
+
+    gap: clamp(6px, 1vw, 16px);
+
+    flex-wrap: wrap;
+
+  }
+
+  .modal-overlay .figurina-wrap {
+
+    --figurina-size: clamp(
+
+      18px,          /* hard minimum */
+
+      15.4vw,        /* ≈ 100px at 650px */
+
+      100px          /* same size as desktop */
+
+    );
+
+    --glow-radius: calc(var(--figurina-size) * 0.18);
+
+  }
+
+  .modal-content {
+
+    padding: 50px 15px;
+
+    border-radius: 15px;
+
+  }
+
+}
+
 </style>
 
 
+
+
+
+<!-------------------------------------------------------------->
+
+<!-------------------------------------------------------------->
+
+
+
+<!-- REGULAR FOOTER -->
 
 
 
@@ -443,6 +674,169 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<!-------------------------------------------------------------->
+
+<!-------------------------------------------------------------->
+
+
+
+<!-- MODAL OVERLAY -->
+
+
+
+<div id="rangers-modal" class="modal-overlay">
+
+  <div class="modal-content">
+
+    <span class="modal-close" onclick="closeRangersModal()">×</span>
+
+    
+
+    <!-- Power Rangers -->
+
+    <div class="modal-row">
+
+      
+
+<a href="https://filippogambarota.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/black.png');
+
+              --glow-color: rgba(0, 0, 0, 0.95);" data-bubble="Filippo Gambarota"><a href="https://filippogambarota.github.io/" target="_blank">
+
+    <div class="figurina"></div></a>
+
+  </div>
+
+
+
+  <a href="https://mar-cald.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/purple.png');
+
+              --glow-color: rgba(200, 0, 255, 0.95);" data-bubble="Margherita Calderan"><a href="https://mar-cald.github.io/" target="_blank">
+
+    <div class="figurina"></div></a>
+
+  </div>
+
+
+
+  <a href="https://enricotoffalini.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/red.png');
+
+              --glow-color: rgba(220, 0, 0, 0.95);" data-bubble="Enrico Toffalini"><a href="https://enricotoffalini.github.io/" target="_blank">
+
+    <div class="figurina"></div></a>
+
+  </div>
+
+
+
+  <a href="https://feracotommaso.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/green.png');
+
+              --glow-color: rgba(100, 150, 50, 0.95);" data-bubble="Tommaso Feraco"><a href="https://feracotommaso.github.io/" target="_blank">
+
+    <div class="figurina"></div></a>
+
+
+
+    </div></div>
+
+    
+
+<!-- Subtitle with link -->
+
+<div style="text-align: center; margin-top: 50px; max-width: 700px; margin-left: auto; margin-right: auto;">
+
+  <p style="font-size: 18px; color: #000; margin-bottom: 20px;">
+
+    Part of 
+
+    <a href="https://psicostat.dpss.psy.unipd.it/pages/people.html" target="_blank" style="color: #760000 !important; text-decoration: none; font-weight: 600;">
+
+      Psicostat  <img src="images/psicostat.png" alt="" style="height: 75px; margin-left: 15px;">
+
+    </a>
+
+  </p>
+
+  
+
+  <p style="font-size: 16px; color: #000; line-height: 1.6; margin-top: 15px;">
+
+    We are an interdisciplinary research group interested in Psychology and Statistics, working in areas related to quantitative psychology, psychometrics, psychological testing and statistics. Our mission is to promote the connection between the two fields in order to benefit the progress of scientific research.
+
+  </p>
+
+</div>
+
+
+
+    
+
+  </div>
+
+</div>
+
+
+
+
+
+<script>
+
+  function openRangersModal() {
+
+    document.getElementById('rangers-modal').classList.add('show');
+
+    document.body.classList.add('modal-open');
+
+  }
+
+
+
+  function closeRangersModal() {
+
+    document.getElementById('rangers-modal').classList.remove('show');
+
+    document.body.classList.remove('modal-open');
+
+  }
+
+
+
+  document.getElementById('rangers-modal').addEventListener('click', function(e) {
+
+    if (e.target === this) closeRangersModal();
+
+  });
+
+
+
+  document.addEventListener('keydown', function(e) {
+
+    if (e.key === 'Escape') closeRangersModal();
+
+  });
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    const navbarBrand = document.querySelector('.navbar-brand');
+
+    if (navbarBrand) {
+
+      navbarBrand.style.cursor = 'pointer';
+
+      navbarBrand.addEventListener('click', function(e) {
+
+        e.preventDefault();
+
+        openRangersModal();
+
+      });
+
+    }
+
+  });
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const isCodeAnnotation = (el) => {

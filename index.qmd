@@ -32,6 +32,8 @@ about:
     - text: '<img src="images/rg.png" style="height: 1.2em; vertical-align: middle; margin-right: 0.25em;"> RG'
       href: https://www.researchgate.net/profile/Enrico-Toffalini
       target: _blank
+markdown:
+  extensions: [link_attributes]
 format:
   html:
     include-after-body: footer.html

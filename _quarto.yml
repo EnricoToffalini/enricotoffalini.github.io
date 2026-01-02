@@ -5,8 +5,12 @@ project:
     - images/**
 
 website:
+  search: 
+    location: navbar
+    type: overlay
   navbar:
     logo: images/power-rangers/red-contour.png
+    logo-href: "#"
     left:
       - href: index.qmd
         text: home
