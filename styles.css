@@ -87,7 +87,7 @@ details[open] > summary{
 
 
 /* =========================================================
-   NAVBAR
+   NAVBAR FEATURES
    ========================================================= */
 
 
@@ -164,6 +164,7 @@ details[open] > summary{
           mask-composite: exclude;
 }
 
+
 /* show ring on hover */
 .navbar .navbar-nav .nav-link:hover::before {
   opacity: 1;
@@ -180,3 +181,52 @@ details[open] > summary{
   50%  { background-position: 400% 0; }
   100% { background-position: 0 0; }
 }
+
+
+
+/* =========================================================
+   EXPLOSION EFFECTS FOR WEBSITE LOGO
+   ========================================================= */
+
+.navbar-brand-logo{
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+
+/* LOGO BASE */
+.navbar-logo{
+  height: 48px;
+  display: block;
+  transition: filter .25s ease, opacity .25s ease;
+}
+
+/* CLONE ANIMATO */
+.navbar-brand-logo::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("images/power-rangers/red-contour.png") center / contain no-repeat;
+  pointer-events: none;
+
+  transform: scale(1);
+  opacity: 0;
+}
+
+/* HOVER */
+.navbar-brand-logo:hover .navbar-logo{
+  filter: brightness(1.5);
+}
+
+.navbar-brand-logo:hover::after{
+  animation: explode-logo .35s ease-out forwards;
+}
+
+/* ANIMAZIONE */
+@keyframes explode-logo{
+  0%{transform: scale(1); opacity: 1; }
+  50%{transform: scale(4); opacity: 0.33; }
+  100%{transform: scale(8);opacity: 0;}
+}
+
+

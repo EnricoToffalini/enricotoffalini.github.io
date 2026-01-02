@@ -186,9 +186,9 @@ ul.task-list li input[type="checkbox"] {
 
   :root {
 
-    --figurina-size: 50px;
-
     --glow-radius: 10px;
+
+    --figurina-size: 50px;
 
   }
 
@@ -596,6 +596,20 @@ body.modal-open {
 
 }
 
+
+
+/* hide bubble when is data-no-bubble */
+
+.figurina-wrap[data-no-bubble]::after,
+
+.figurina-wrap[data-no-bubble]::before {
+
+  content: none !important;
+
+  display: none !important;
+
+}
+
 </style>
 
 
@@ -742,23 +756,29 @@ body.modal-open {
 
 <!-- Subtitle with link -->
 
-<div style="text-align: center; margin-top: 50px; max-width: 700px; margin-left: auto; margin-right: auto;">
+<div style="text-align: center; margin-top: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
 
   <p style="font-size: 18px; color: #000; margin-bottom: 20px;">
 
-    Part of 
+    Part of </p>
 
-    <a href="https://psicostat.dpss.psy.unipd.it/pages/people.html" target="_blank" style="color: #760000 !important; text-decoration: none; font-weight: 600;">
+    <a href="https://psicostat.dpss.psy.unipd.it/pages/people.html" target="_blank">
 
-      Psicostat  <img src="images/psicostat.png" alt="" style="height: 75px; margin-left: 15px;">
+      <div class="figurina-wrap" style="--figurina-img: url('images/psicostat.png');
+
+              --glow-color: rgba(118, 0, 0, 0.95);
+
+              --figurina-size: 150px;
+
+              --glow-radius: 40px;" data-no-bubble="">
+
+    <div class="figurina">
+
+    </div></div>
 
     </a>
 
-  </p>
-
-  
-
-  <p style="font-size: 16px; color: #000; line-height: 1.6; margin-top: 15px;">
+      <p style="font-size: 16px; color: #000; line-height: 1.6; margin-top: 15px;">
 
     We are an interdisciplinary research group interested in Psychology and Statistics, working in areas related to quantitative psychology, psychometrics, psychological testing and statistics. Our mission is to promote the connection between the two fields in order to benefit the progress of scientific research.
 
