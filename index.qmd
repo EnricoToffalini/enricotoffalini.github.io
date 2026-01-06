@@ -42,6 +42,6 @@ website:
     logo-href: "#"
 ---
 
-Associate Professor at the Department of General Psychology, University of Padova, Italy. Research interests include neurodevelopmental conditions, neurodiversity, human intelligence, meta-research, research designs and quantitative methods
+Associate Professor at the Department of General Psychology, University of Padova (Italy). Research interests include neurodevelopmental conditions, neurodiversity, human intelligence, meta-research, research designs and quantitative methods
 
 
