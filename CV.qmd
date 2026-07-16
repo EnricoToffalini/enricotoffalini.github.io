@@ -23,11 +23,11 @@ toc: false
 
 You can view or download the full CV (Italian, PDF) here:
 
-- <a href="assets/ToffaliniCV.pdf" target="_blank">Download full CV (PDF) (in Italian)</a>
+- <a href="https://enricotoffalini.github.io/cv/pdf/cv-en-full.pdf" target="_blank">Download full CV (PDF)</a>
 
 <div class="cv-preview" style="margin-top: 1.5rem;">
   <iframe
-    src="assets/ToffaliniCV.pdf"
+    src="https://enricotoffalini.github.io/cv/index.html"
     width="100%"
     height="650"
     style="border: 1px solid #ccc; border-radius: 4px;">
