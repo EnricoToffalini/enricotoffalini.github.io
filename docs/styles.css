@@ -479,11 +479,6 @@ details[open] > summary { color: var(--red-deep); }
   animation: rise-in 1s var(--ease) both;
 }
 
-/* the page description is only for link previews and search engines */
-.home .quarto-about-jolla .description {
-  display: none;
-}
-
 /* name */
 .home .quarto-about-jolla h1.title {
   font-family: 'Noto Serif', Georgia, 'Times New Roman', serif;

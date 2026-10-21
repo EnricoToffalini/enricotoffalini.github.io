@@ -1,14 +1,16 @@
 ---
 title: "Enrico Toffalini"
-description: "Associate Professor at the Department of General Psychology, University of Padova. Neurodevelopmental conditions, human intelligence, meta-research and quantitative methods."
 image: images/toffa.jpg
-# the about photo is square: keep the wide card for link previews
+# link previews: the about photo is square, so use the wide card; preview
+# text only here, since a page description would be shown under the name
 open-graph:
+  description: "Associate Professor at the Department of General Psychology, University of Padova. Neurodevelopmental conditions, human intelligence, meta-research and quantitative methods."
   image: images/social-card.jpg
   image-alt: "Enrico Toffalini, Associate Professor, Department of General Psychology, University of Padova"
   image-width: 1200
   image-height: 630
 twitter-card:
+  description: "Associate Professor at the Department of General Psychology, University of Padova. Neurodevelopmental conditions, human intelligence, meta-research and quantitative methods."
   image: images/social-card.jpg
   image-alt: "Enrico Toffalini, Associate Professor, Department of General Psychology, University of Padova"
   image-width: 1200
