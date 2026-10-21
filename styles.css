@@ -479,12 +479,17 @@ details[open] > summary { color: var(--red-deep); }
   animation: rise-in 1s var(--ease) both;
 }
 
+/* the page description is only for link previews and search engines */
+.home .quarto-about-jolla .description {
+  display: none;
+}
+
 /* name */
 .home .quarto-about-jolla h1.title {
-  font-family: var(--bs-body-font-family);
+  font-family: 'Noto Serif', Georgia, 'Times New Roman', serif;
   font-size: clamp(2.2rem, 4.4vw, 3rem);
-  font-weight: 400;
-  letter-spacing: .01em;
+  font-weight: 600;
+  letter-spacing: -.01em;
   line-height: 1.15;
   margin-bottom: .2em;
   /* one light sweep on load, then plain dark red */
