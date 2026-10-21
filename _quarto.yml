@@ -7,6 +7,16 @@ project:
     - effects.js
 
 website:
+  description: "Associate Professor at the Department of General Psychology, University of Padova. Neurodevelopmental conditions, human intelligence, meta-research and quantitative methods."
+  # Link previews (WhatsApp, social networks): Open Graph/Twitter tags need
+  # an absolute image URL, hence site-url.
+  site-url: https://enricotoffalini.github.io/
+  image: images/social-card.jpg
+  image-alt: "Enrico Toffalini, Associate Professor, Department of General Psychology, University of Padova"
+  open-graph:
+    locale: en_US
+  twitter-card:
+    card-style: summary_large_image
   search: 
     location: navbar
     type: overlay
@@ -38,7 +48,7 @@ format:
          <meta name="google-site-verification" content="0Bgsc2FKbLDwGUtDSchwt68Oard7n2Q3eaEDg6KU7rE" />
          <link rel="preconnect" href="https://fonts.googleapis.com">
          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Noto+Serif:wght@600&display=swap" rel="stylesheet">
          <script src="effects.js" defer></script>
     theme:
       - cosmo
