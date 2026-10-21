@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Enrico Toffalini",
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "",
     "section": "",
-    "text": "Associate Professor at the Department of General Psychology, University of Padova (Italy). Research interests include neurodevelopmental conditions, neurodiversity, human intelligence, meta-research, research designs and quantitative methods"
+    "text": "Email address\nInstitutional: enrico.toffalini@unipd.it\n\n\nZoom link\nhttps://unipd.zoom.us/my/toffalini.e\n\n\nUniversity contact page\nhttps://www.unipd.it/en/contatti/rubrica - Enrico Toffalini\n\n\nOffice hours / Ricevimento\nGenerally on Wednesday morning, 10am-12am, but please consult the University contact page"
   },
   {
     "objectID": "Courses.html",
@@ -26,13 +26,6 @@
     "title": "Courses and Open Teaching materials",
     "section": "",
     "text": "If you are interested in using or adapting these materials for your course, or if you have suggestions for improvements: enrico.toffalini@unipd.it\nI am always happy to see these resources reused, remixed, and improved, especially when they help promote better methods and critical thinking in psychological science."
-  },
-  {
-    "objectID": "contact.html",
-    "href": "contact.html",
-    "title": "",
-    "section": "",
-    "text": "Email address\nInstitutional: enrico.toffalini@unipd.it\n\n\nZoom link\nhttps://unipd.zoom.us/my/toffalini.e\n\n\nUniversity contact page\nhttps://www.unipd.it/en/contatti/rubrica - Enrico Toffalini\n\n\nOffice hours / Ricevimento\nGenerally on Wednesday morning, 10am-12am, but please consult the University contact page"
   },
   {
     "objectID": "CV.html",
@@ -61,5 +54,12 @@
     "title": "CV / Bio",
     "section": "",
     "text": "Enrico Toffalini is an Associate Professor of General Psychology at the University of Padova. His research focuses on intelligence and individual differences in cognitive abilities in typical and atypical development, individual differences, and dimensional approaches to neurodevelopmental disorders. He also works extensively on quantitative methods, meta-research, and design/power analysis, contributing methodological tools aimed at improving psychological science.\nHe has authored more than 90 peer-reviewed publications and has collaborated with research groups in the United Kingdom, the United States, and Norway, among others. Enrico is Principal Investigator or Co-PI of national projects funded by the Italian Ministry of Universities and Research (PRIN and PRIN-PNRR), and is an active member of the Memory & Learning Lab and the PsicoStat group at the University of Padova."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Enrico Toffalini",
+    "section": "",
+    "text": "Associate Professor at the Department of General Psychology, University of Padova (Italy). Research interests include neurodevelopmental conditions, neurodiversity, human intelligence, meta-research, research designs and quantitative methods"
   }
 ]

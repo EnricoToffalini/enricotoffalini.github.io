@@ -7,6 +7,16 @@ project:
     - effects.js
 
 website:
+  description: "Associate Professor at the Department of General Psychology, University of Padova. Neurodevelopmental conditions, human intelligence, meta-research and quantitative methods."
+  # Link previews (WhatsApp, social networks): Open Graph/Twitter tags need
+  # an absolute image URL, hence site-url.
+  site-url: https://enricotoffalini.github.io/
+  image: images/social-card.jpg
+  image-alt: "Enrico Toffalini, Associate Professor, Department of General Psychology, University of Padova"
+  open-graph:
+    locale: en_US
+  twitter-card:
+    card-style: summary_large_image
   search: 
     location: navbar
     type: overlay

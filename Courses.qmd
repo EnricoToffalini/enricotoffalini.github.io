@@ -1,4 +1,8 @@
 ---
+pagetitle: "Courses · Enrico Toffalini"
+description: "Courses and open teaching materials by Enrico Toffalini: R, statistics, data science and research methods."
+image: images/social-card.jpg
+image-alt: "Enrico Toffalini, Associate Professor, Department of General Psychology, University of Padova"
 toc: false
 ---
 
