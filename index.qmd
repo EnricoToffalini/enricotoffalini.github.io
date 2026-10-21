@@ -1,6 +1,18 @@
 ---
 title: "Enrico Toffalini"
+description: "Associate Professor at the Department of General Psychology, University of Padova. Neurodevelopmental conditions, human intelligence, meta-research and quantitative methods."
 image: images/toffa.jpg
+# the about photo is square: keep the wide card for link previews
+open-graph:
+  image: images/social-card.jpg
+  image-alt: "Enrico Toffalini, Associate Professor, Department of General Psychology, University of Padova"
+  image-width: 1200
+  image-height: 630
+twitter-card:
+  image: images/social-card.jpg
+  image-alt: "Enrico Toffalini, Associate Professor, Department of General Psychology, University of Padova"
+  image-width: 1200
+  image-height: 630
 about:
   id: hero-heading
   template: jolla
