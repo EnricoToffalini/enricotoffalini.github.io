@@ -1,6 +1,8 @@
 ---
 pagetitle: "Contact · Enrico Toffalini"
 description: "How to contact Enrico Toffalini, Department of General Psychology, University of Padova."
+image: images/social-card-contact.jpg
+image-alt: "Contact, Enrico Toffalini"
 toc: false
 ---
 
