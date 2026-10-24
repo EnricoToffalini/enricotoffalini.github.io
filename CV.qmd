@@ -1,6 +1,8 @@
 ---
 pagetitle: "CV · Enrico Toffalini"
 description: "Curriculum and bio of Enrico Toffalini, Associate Professor at the Department of General Psychology, University of Padova."
+image: images/social-card-cv.jpg
+image-alt: "CV / Bio, Enrico Toffalini"
 toc: false
 ---
 
