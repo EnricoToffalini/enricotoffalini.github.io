@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-7f537555e85d979099ed792706140d7e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dfb324f25d9b1687192fa8be62ac8f9c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -186,348 +186,807 @@ ul.task-list li input[type="checkbox"] {
 </div>
  <!-- /main -->
 
+
 <!-------------------------------------------------------------->
+
 <!-------------------------------------------------------------->
+
+
+
+<!-- Self-contained Rangers: include this file after the home page body and copy
+
+     images/power-rangers/ + images/psicostat.png, keeping their relative paths.
+
+     The six-frame hover sequence is in images/power-rangers/moves-power-clean.webp.
+
+     Set data-move on each figurina-wrap: leap, twirl, strike or kick. -->
 
 <!-- CSS STYLE -->
 
+
+
 <style>
+
   :root {
+
     --glow-radius: 10px;
+
     --figurina-size: 50px;
+
   }
+
+
 
   /* Contenitore esterno: alone + fumetto */
+
   .figurina-wrap {
+
     display: inline-block;
+
     position: relative;
+
     transition: filter 0.25s ease;
 
-    /* valori di default (possono essere sovrascritti inline) */
-    --figurina-img: url("red.png");
+
+
+    /* colore di default (pu? essere sovrascritto inline) */
+
     --glow-color: rgba(255, 0, 0, 0.95);
+
   }
+
+
 
   /* Alone in hover (usa il colore variabile) */
-  .figurina-wrap:hover {
+
+  .figurina-wrap:is(:hover, :focus-within) {
+
     filter: drop-shadow(0 0 var(--glow-radius) var(--glow-color));
+
   }
+
+
 
   .figurina {
+
     width: var(--figurina-size);
+
     height: var(--figurina-size);
+
     cursor: pointer;
-    transition: transform 0.25s ease;
+
+    transform-origin: 50% 85%;
+
+
 
     /* immagine visibile */
-    background-image: var(--figurina-img);
+
+    background-image: var(--figurina-img, none);
+
     background-size: contain;
+
     background-repeat: no-repeat;
+
     background-position: center;
 
-    /* maschera che segue il contorno (alpha del PNG) */
-    -webkit-mask-image: var(--figurina-img);
-    mask-image: var(--figurina-img);
-    -webkit-mask-mode: alpha;
-    mask-mode: alpha;
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
 
-    background-color: #ffffff;
+
+    background-color: transparent;
+
   }
 
-  /* Zoom solo sulla figurina */
-  .figurina-wrap:hover .figurina {
-    transform: scale(1.25) !important;
+
+
+  /* The logo is a normal image; Rangers use backgrounds for their frames. */
+
+  .figurina.psicostat-logo {
+
+    display: block;
+
+    object-fit: contain;
+
+    background: none;
+
   }
+
+  .figurina-wrap[data-no-bubble] .figurina { transition: transform .25s ease; }
+
+  .figurina-wrap[data-no-bubble]:is(:hover, :focus-within) .figurina { transform: scale(1.25); }
+
+
+
+  /* The link stays fixed; the sprite grows from its feet without moving the target. */
+
+  .figurina-wrap[data-move] {
+
+    width: var(--figurina-size);
+
+    height: var(--figurina-size);
+
+    flex-shrink: 0;
+
+    --ranger-row: 0%;
+
+    --ranger-zoom: 2.55; /* Compensate the 64px gutters; artwork stays at 1.7x. */
+
+  }
+
+  .figurina-wrap[data-move] > a {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+  }
+
+  .figurina-wrap[data-move] .figurina {
+
+    pointer-events: none;
+
+  }
+
+  .figurina-wrap[data-move]:is(:hover, :focus-within) {
+
+    z-index: 3;
+
+  }
+
+  .figurina-wrap[data-move]:is(:hover, :focus-within)::after,
+
+  .figurina-wrap[data-move]:is(:hover, :focus-within)::before {
+
+    top: calc(var(--figurina-size) * -.2);
+
+  }
+
+  .figurina-wrap[data-move="twirl"] { --ranger-row: 33.333333%; }
+
+  .figurina-wrap[data-move="strike"] { --ranger-row: 66.666667%; }
+
+  .figurina-wrap[data-move="kick"] { --ranger-row: 100%; }
+
+
+
+  @media (prefers-reduced-motion: no-preference) {
+
+    .figurina-wrap[data-move].ranger-ready:is(:hover, :focus-within) .figurina {
+
+      background-image: url('images/power-rangers/moves-power-clean.webp');
+
+      background-size: 600% 400%;
+
+      background-position: 0% var(--ranger-row);
+
+      transform-origin: 50% 65.806452%;
+
+      transform: scale(var(--ranger-zoom));
+
+      animation: ranger-frames 1s steps(1, end) infinite;
+
+    }
+
+  }
+
+  @keyframes ranger-frames {
+
+    0%, 100% { background-position-x: 0%; }
+
+    16% { background-position-x: 20%; }
+
+    32% { background-position-x: 40%; }
+
+    40% { background-position-x: 60%; }
+
+    64% { background-position-x: 80%; }
+
+    80% { background-position-x: 100%; }
+
+  }
+
+
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .figurina-wrap, .figurina-wrap::before, .figurina-wrap::after {
+
+      transition: none;
+
+    }
+
+    .figurina-wrap[data-no-bubble] .figurina { transition: none; }
+
+    .figurina-wrap[data-no-bubble]:is(:hover, :focus-within) .figurina { transform: none; }
+
+    #rangers-modal .modal-content { animation: none; }
+
+  }
+
+
 
   /* Fumetto (testo preso da data-bubble) */
+
   .figurina-wrap::after {
+
     content: attr(data-bubble);
+
     position: absolute;
+
     left: 50%;
+
     top: 0;
+
     transform: translate(-50%, -120%) scale(0.95);
+
     padding: 6px 10px;
+
     background: #ffffff;
+
     color: #333;
+
     font-size: 14px;
+
     border-radius: 999px;
+
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+
     white-space: nowrap;
+
     opacity: 0;
+
     pointer-events: none;
+
     transition: opacity 0.2s ease, transform 0.2s ease;
+
     z-index: 2;
+
   }
+
+
 
   /* Triangolino del fumetto */
+
   .figurina-wrap::before {
+
     content: "";
+
     position: absolute;
+
     left: 50%;
+
     top: 0;
+
     transform: translate(-50%, -35%);
+
     border-width: 8px 8px 0 8px;
+
     border-style: solid;
+
     border-color: #ffffff transparent transparent transparent;
+
     opacity: 0;
+
     pointer-events: none;
+
     transition: opacity 0.2s ease, transform 0.2s ease;
+
     z-index: 1;
+
   }
+
+
 
   /* Mostra fumetto in hover */
-  .figurina-wrap:hover::after,
-  .figurina-wrap:hover::before {
+
+  .figurina-wrap:is(:hover, :focus-within)::after,
+
+  .figurina-wrap:is(:hover, :focus-within)::before {
+
     opacity: 1;
+
     transform: translate(-50%, -140%);
+
   }
+
+
 
   /* solo per spaziarle un po' */
+
   .figurina-wrap + .figurina-wrap {
+
     margin-left: 15px;
+
   }
+
   
+
   /* Modal overlay styles */
+
   .modal-overlay {
+
     display: none;
+
     position: fixed;
+
     top: 0;
+
     left: 0;
+
     width: 100%;
+
     height: 100%;
+
     background: rgba(0, 0, 0, 0.85);
+
     z-index: 9999;
+
     justify-content: center;
+
     align-items: center;
+
   }
+
   
+
   .modal-overlay.show {
+
     display: flex;
+
   }
+
   
+
   .modal-content {
+
     background: white;
-    padding: 60px 80px;
+
+    padding: 90px 80px 60px;
+
     border-radius: 20px;
+
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+
     position: relative;
+
     animation: modalPop 0.3s ease;
+
   }
+
   
+
   @keyframes modalPop {
+
     from { transform: scale(0.8); opacity: 0; }
+
     to { transform: scale(1); opacity: 1; }
+
   }
+
   
+
   .modal-close {
+
     position: absolute;
+
     top: 15px;
+
     right: 20px;
+
     font-size: 40px;
+
     cursor: pointer;
+
     color: #999;
+
     font-weight: 300;
+
     line-height: 1;
+
   }
+
   
+
   .modal-close:hover {
+
     color: #333;
+
   }
+
+
 
 /* Overlay should scroll if content is taller than the viewport */
+
 .modal-overlay {
+
   overflow-y: auto;
+
   -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+
   padding: 20px;                    /* keeps content away from edges */
+
 }
+
+
 
 /* Modal box should never exceed screen height */
+
 .modal-content {
+
   max-height: calc(100vh - 40px); /* viewport minus overlay padding */
+
   overflow-y: auto;
+
   max-width: 900px;
+
   width: min(900px, 100%);
+
   box-sizing: border-box;
+
 }
+
+
 
 /* Lock background scroll when modal is open */
+
 body.modal-open {
+
   overflow: hidden;
+
 }
+
+
 
   /* Larger size for modal */
+
   .modal-overlay .figurina-wrap {
+
     --figurina-size: 100px;
+
     --glow-radius: 20px;
+
   }
+
   
+
   .modal-overlay .figurina-wrap + .figurina-wrap {
+
     margin-left: 0 !important;
+
   }
+
   
+
   .modal-row {
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   gap: 25px;  /* default desktop gap */
+
   text-align: center;
+
 }
+
+
 
 /* Adapt figure size for modal when on phone */
+
 @media (max-width: 650px) {
+
   .modal-row {
+
     gap: clamp(6px, 1vw, 16px);
+
     flex-wrap: wrap;
+
   }
+
   .modal-overlay .figurina-wrap {
+
     --figurina-size: clamp(
+
       18px,          /* hard minimum */
+
       15.4vw,        /* ≈ 100px at 650px */
+
       100px          /* same size as desktop */
+
     );
+
     --glow-radius: calc(var(--figurina-size) * 0.18);
+
   }
+
   .modal-content {
-    padding: 50px 15px;
+
+    padding: 80px 15px 50px;
+
     border-radius: 15px;
+
   }
+
 }
 
+
+
 /* hide bubble when is data-no-bubble */
+
 .figurina-wrap[data-no-bubble]::after,
+
 .figurina-wrap[data-no-bubble]::before {
+
   content: none !important;
+
   display: none !important;
+
 }
+
 </style>
 
 
+
+
+
 <!-------------------------------------------------------------->
+
 <!-------------------------------------------------------------->
+
+
 
 <!-- REGULAR FOOTER -->
 
+
+
 <div class="rangers-footer" style="
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
+
   gap: 3px;
+
   text-align: center;
+
   padding: 20px;
+
 ">
 
-  <a href="https://filippogambarota.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/black.png');
-              --glow-color: rgba(0, 0, 0, 0.95);" data-bubble="Filippo Gambarota"><a href="https://filippogambarota.github.io/" target="_blank">
-    <div class="figurina"></div></a>
+
+
+  <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/black.png');
+
+              --glow-color: rgba(0, 0, 0, 0.95);" data-bubble="Filippo Gambarota" data-move="leap">
+
+    <a href="https://filippogambarota.github.io/" target="_blank" aria-label="Filippo Gambarota"><div class="figurina"></div></a>
+
   </div>
 
-  <a href="https://mar-cald.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/purple.png');
-              --glow-color: rgba(200, 0, 255, 0.95);" data-bubble="Margherita Calderan"><a href="https://mar-cald.github.io/" target="_blank">
-    <div class="figurina"></div></a>
+
+
+  <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/purple.png');
+
+              --glow-color: rgba(200, 0, 255, 0.95);" data-bubble="Margherita Calderan" data-move="twirl">
+
+    <a href="https://mar-cald.github.io/" target="_blank" aria-label="Margherita Calderan"><div class="figurina"></div></a>
+
   </div>
 
-  <a href="https://enricotoffalini.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/red.png');
-              --glow-color: rgba(220, 0, 0, 0.95);" data-bubble="Enrico Toffalini"><a href="https://enricotoffalini.github.io/" target="_blank">
-    <div class="figurina"></div></a>
+
+
+  <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/red.png');
+
+              --glow-color: rgba(220, 0, 0, 0.95);" data-bubble="Enrico Toffalini" data-move="strike">
+
+    <a href="https://enricotoffalini.github.io/" target="_blank" aria-label="Enrico Toffalini"><div class="figurina"></div></a>
+
   </div>
 
-  <a href="https://feracotommaso.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/green.png');
-              --glow-color: rgba(100, 150, 50, 0.95);" data-bubble="Tommaso Feraco"><a href="https://feracotommaso.github.io/" target="_blank">
-    <div class="figurina"></div></a>
+
+
+  <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/green.png');
+
+              --glow-color: rgba(100, 150, 50, 0.95);" data-bubble="Tommaso Feraco" data-move="kick">
+
+    <a href="https://feracotommaso.github.io/" target="_blank" aria-label="Tommaso Feraco"><div class="figurina"></div></a>
+
   </div>
+
+
 
 </div>
 
+
+
 <!-------------------------------------------------------------->
+
 <!-------------------------------------------------------------->
+
+
 
 <!-- MODAL OVERLAY -->
 
+
+
 <div id="rangers-modal" class="modal-overlay">
+
   <div class="modal-content">
+
     <span class="modal-close" onclick="closeRangersModal()">×</span>
+
     
+
     <!-- Power Rangers -->
+
     <div class="modal-row">
+
       
-<a href="https://filippogambarota.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/black.png');
-              --glow-color: rgba(0, 0, 0, 0.95);" data-bubble="Filippo Gambarota"><a href="https://filippogambarota.github.io/" target="_blank">
-    <div class="figurina"></div></a>
+
+<div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/black.png');
+
+              --glow-color: rgba(0, 0, 0, 0.95);" data-bubble="Filippo Gambarota" data-move="leap">
+
+    <a href="https://filippogambarota.github.io/" target="_blank" aria-label="Filippo Gambarota"><div class="figurina"></div></a>
+
   </div>
 
-  <a href="https://mar-cald.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/purple.png');
-              --glow-color: rgba(200, 0, 255, 0.95);" data-bubble="Margherita Calderan"><a href="https://mar-cald.github.io/" target="_blank">
-    <div class="figurina"></div></a>
+
+
+  <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/purple.png');
+
+              --glow-color: rgba(200, 0, 255, 0.95);" data-bubble="Margherita Calderan" data-move="twirl">
+
+    <a href="https://mar-cald.github.io/" target="_blank" aria-label="Margherita Calderan"><div class="figurina"></div></a>
+
   </div>
 
-  <a href="https://enricotoffalini.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/red.png');
-              --glow-color: rgba(220, 0, 0, 0.95);" data-bubble="Enrico Toffalini"><a href="https://enricotoffalini.github.io/" target="_blank">
-    <div class="figurina"></div></a>
+
+
+  <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/red.png');
+
+              --glow-color: rgba(220, 0, 0, 0.95);" data-bubble="Enrico Toffalini" data-move="strike">
+
+    <a href="https://enricotoffalini.github.io/" target="_blank" aria-label="Enrico Toffalini"><div class="figurina"></div></a>
+
   </div>
 
-  <a href="https://feracotommaso.github.io/" target="_blank"></a><div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/green.png');
-              --glow-color: rgba(100, 150, 50, 0.95);" data-bubble="Tommaso Feraco"><a href="https://feracotommaso.github.io/" target="_blank">
-    <div class="figurina"></div></a>
+
+
+  <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/green.png');
+
+              --glow-color: rgba(100, 150, 50, 0.95);" data-bubble="Tommaso Feraco" data-move="kick">
+
+    <a href="https://feracotommaso.github.io/" target="_blank" aria-label="Tommaso Feraco"><div class="figurina"></div></a>
+
+
 
     </div></div>
+
     
+
 <!-- Subtitle with link -->
+
 <div style="text-align: center; margin-top: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+
   <p style="font-size: 18px; color: #000; margin-bottom: 20px;">
+
     Part of </p>
-    <a href="https://psicostat.dpss.psy.unipd.it/pages/people.html" target="_blank">
-      <div class="figurina-wrap" style="--figurina-img: url('images/psicostat.png');
-              --glow-color: rgba(118, 0, 0, 0.95);
+
+    <a href="https://psicostat.dpss.psy.unipd.it/pages/people.html" target="_blank" class="figurina-wrap" style="--glow-color: rgba(118, 0, 0, 0.95);
+
               --figurina-size: 150px;
+
               --glow-radius: 40px;" data-no-bubble="">
-    <div class="figurina">
-    </div></div>
+
+      <img class="figurina psicostat-logo" src="images/psicostat.png" alt="Psicostat" width="150" height="150">
+
     </a>
+
       <p style="font-size: 16px; color: #000; line-height: 1.6; margin-top: 15px;">
+
     We are an interdisciplinary research group interested in Psychology and Statistics, working in areas related to quantitative psychology, psychometrics, psychological testing and statistics. Our mission is to promote the connection between the two fields in order to benefit the progress of scientific research.
+
   </p>
+
 </div>
 
+
+
     
+
   </div>
+
 </div>
+
+
+
 
 
 <script>
+
+  // Keep the original PNG visible until the entire sprite sheet is available.
+
+  (function () {
+
+    const sheet = new Image();
+
+    sheet.onload = function () {
+
+      document.querySelectorAll('.figurina-wrap[data-move]').forEach(function (figure) {
+
+        figure.classList.add('ranger-ready');
+
+      });
+
+    };
+
+    sheet.src = 'images/power-rangers/moves-power-clean.webp';
+
+  })();
+
+
+
   function openRangersModal() {
+
     document.getElementById('rangers-modal').classList.add('show');
+
     document.body.classList.add('modal-open');
+
   }
+
+
 
   function closeRangersModal() {
+
     document.getElementById('rangers-modal').classList.remove('show');
+
     document.body.classList.remove('modal-open');
+
   }
 
+
+
   document.getElementById('rangers-modal').addEventListener('click', function(e) {
+
     if (e.target === this) closeRangersModal();
+
   });
+
+
 
   document.addEventListener('keydown', function(e) {
+
     if (e.key === 'Escape') closeRangersModal();
+
   });
 
+
+
   document.addEventListener('DOMContentLoaded', function() {
+
     const navbarBrand = document.querySelector('.navbar-brand');
+
     if (navbarBrand) {
+
       navbarBrand.style.cursor = 'pointer';
+
       navbarBrand.addEventListener('click', function(e) {
+
         e.preventDefault();
+
         openRangersModal();
+
       });
+
     }
+
   });
+
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
