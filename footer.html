@@ -262,7 +262,9 @@ body.modal-open {
   }
 }
 
-/* Explosive halo: a burst of the Ranger's colour across the screen */
+/* Explosive halo (DISABLED, kept for later): a burst of the Ranger's colour
+   across the screen. To restore it, uncomment this block and the matching
+   script below ("Explosive halo").
 .ranger-burst {
   position: fixed;
   inset: 0;
@@ -270,7 +272,7 @@ body.modal-open {
   pointer-events: none;
   overflow: hidden;
 }
-/* A soft-edged disc that expands from the Ranger and fades out */
+  (A soft-edged disc that expands from the Ranger and fades out)
 .ranger-burst::before {
   content: "";
   position: absolute;
@@ -289,7 +291,7 @@ body.modal-open {
   35%  { opacity: .45; }
   100% { transform: translate(-50%, -50%) scale(1);  opacity: 0; }
 }
-
+*/
 /* hide bubble when is data-no-bubble */
 .figurina-wrap[data-no-bubble]::after,
 .figurina-wrap[data-no-bubble]::before {
@@ -418,6 +420,8 @@ body.modal-open {
     sheet.src = 'images/power-rangers/moves-power-clean.webp';
   })();
 
+  /* Explosive halo (DISABLED, kept for later): uncomment to restore,
+     together with the .ranger-burst CSS above.
   // Explosive halo of the Ranger's colour when the move starts.
   (function () {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -439,6 +443,7 @@ body.modal-open {
       figure.addEventListener('focusin', function () { burst(figure); });
     });
   })();
+  */
 
   function openRangersModal() {
     document.getElementById('rangers-modal').classList.add('show');
