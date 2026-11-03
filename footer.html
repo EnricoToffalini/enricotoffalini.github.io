@@ -262,6 +262,34 @@ body.modal-open {
   }
 }
 
+/* Explosive halo: a burst of the Ranger's colour across the screen */
+.ranger-burst {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  overflow: hidden;
+}
+/* A soft-edged disc that expands from the Ranger and fades out */
+.ranger-burst::before {
+  content: "";
+  position: absolute;
+  left: var(--bx);
+  top: var(--by);
+  width: 300vmax;
+  height: 300vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle closest-side,
+    #fff 0, var(--burst-color) 10%, var(--burst-color) 35%, transparent 100%);
+  transform: translate(-50%, -50%) scale(0);
+  animation: ranger-burst .5s ease-out forwards;
+}
+@keyframes ranger-burst {
+  0%   { transform: translate(-50%, -50%) scale(0);  opacity: .9; }
+  35%  { opacity: .7; }
+  100% { transform: translate(-50%, -50%) scale(1);  opacity: 0; }
+}
+
 /* hide bubble when is data-no-bubble */
 .figurina-wrap[data-no-bubble]::after,
 .figurina-wrap[data-no-bubble]::before {
@@ -282,7 +310,7 @@ body.modal-open {
   align-items: center;
   gap: 3px;
   text-align: center;
-  padding: 20px;
+  padding: 20px 20px 36px; /* room for the zoomed Ranger: no scrollbar on hover */
 ">
 
   <div class="figurina-wrap"
@@ -388,6 +416,28 @@ body.modal-open {
       });
     };
     sheet.src = 'images/power-rangers/moves-power-clean.webp';
+  })();
+
+  // Explosive halo of the Ranger's colour when the move starts.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function burst(figure) {
+      const now = Date.now();
+      if (now - (figure._burstAt || 0) < 700) return; // hover + focus = one burst
+      figure._burstAt = now;
+      const r = figure.getBoundingClientRect();
+      const b = document.createElement('div');
+      b.className = 'ranger-burst';
+      b.style.setProperty('--bx', (r.left + r.width / 2) + 'px');
+      b.style.setProperty('--by', (r.top + r.height / 2) + 'px');
+      b.style.setProperty('--burst-color', getComputedStyle(figure).getPropertyValue('--glow-color'));
+      setTimeout(function () { b.remove(); }, 600);
+      document.body.appendChild(b);
+    }
+    document.querySelectorAll('.figurina-wrap[data-move]').forEach(function (figure) {
+      figure.addEventListener('mouseenter', function () { burst(figure); });
+      figure.addEventListener('focusin', function () { burst(figure); });
+    });
   })();
 
   function openRangersModal() {

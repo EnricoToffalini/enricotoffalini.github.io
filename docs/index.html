@@ -186,807 +186,456 @@ ul.task-list li input[type="checkbox"] {
 </div>
  <!-- /main -->
 
-
 <!-------------------------------------------------------------->
-
 <!-------------------------------------------------------------->
-
-
 
 <!-- Self-contained Rangers: include this file after the home page body and copy
-
      images/power-rangers/ + images/psicostat.png, keeping their relative paths.
-
      The six-frame hover sequence is in images/power-rangers/moves-power-clean.webp.
-
      Set data-move on each figurina-wrap: leap, twirl, strike or kick. -->
-
 <!-- CSS STYLE -->
 
-
-
 <style>
-
   :root {
-
     --glow-radius: 10px;
-
     --figurina-size: 50px;
-
   }
-
-
 
   /* Contenitore esterno: alone + fumetto */
-
   .figurina-wrap {
-
     display: inline-block;
-
     position: relative;
-
     transition: filter 0.25s ease;
 
-
-
     /* colore di default (pu? essere sovrascritto inline) */
-
     --glow-color: rgba(255, 0, 0, 0.95);
-
   }
-
-
 
   /* Alone in hover (usa il colore variabile) */
-
   .figurina-wrap:is(:hover, :focus-within) {
-
     filter: drop-shadow(0 0 var(--glow-radius) var(--glow-color));
-
   }
-
-
 
   .figurina {
-
     width: var(--figurina-size);
-
     height: var(--figurina-size);
-
     cursor: pointer;
-
     transform-origin: 50% 85%;
 
-
-
     /* immagine visibile */
-
     background-image: var(--figurina-img, none);
-
     background-size: contain;
-
     background-repeat: no-repeat;
-
     background-position: center;
 
-
-
     background-color: transparent;
-
   }
-
-
 
   /* The logo is a normal image; Rangers use backgrounds for their frames. */
-
   .figurina.psicostat-logo {
-
     display: block;
-
     object-fit: contain;
-
     background: none;
-
   }
-
   .figurina-wrap[data-no-bubble] .figurina { transition: transform .25s ease; }
-
   .figurina-wrap[data-no-bubble]:is(:hover, :focus-within) .figurina { transform: scale(1.25); }
 
-
-
   /* The link stays fixed; the sprite grows from its feet without moving the target. */
-
   .figurina-wrap[data-move] {
-
     width: var(--figurina-size);
-
     height: var(--figurina-size);
-
     flex-shrink: 0;
-
     --ranger-row: 0%;
-
     --ranger-zoom: 2.55; /* Compensate the 64px gutters; artwork stays at 1.7x. */
-
   }
-
   .figurina-wrap[data-move] > a {
-
     display: block;
-
     width: 100%;
-
     height: 100%;
-
   }
-
   .figurina-wrap[data-move] .figurina {
-
     pointer-events: none;
-
   }
-
   .figurina-wrap[data-move]:is(:hover, :focus-within) {
-
     z-index: 3;
-
   }
-
   .figurina-wrap[data-move]:is(:hover, :focus-within)::after,
-
   .figurina-wrap[data-move]:is(:hover, :focus-within)::before {
-
     top: calc(var(--figurina-size) * -.2);
-
   }
-
   .figurina-wrap[data-move="twirl"] { --ranger-row: 33.333333%; }
-
   .figurina-wrap[data-move="strike"] { --ranger-row: 66.666667%; }
-
   .figurina-wrap[data-move="kick"] { --ranger-row: 100%; }
 
-
-
   @media (prefers-reduced-motion: no-preference) {
-
     .figurina-wrap[data-move].ranger-ready:is(:hover, :focus-within) .figurina {
-
       background-image: url('images/power-rangers/moves-power-clean.webp');
-
       background-size: 600% 400%;
-
       background-position: 0% var(--ranger-row);
-
       transform-origin: 50% 65.806452%;
-
       transform: scale(var(--ranger-zoom));
-
       animation: ranger-frames 1s steps(1, end) infinite;
-
     }
-
   }
-
   @keyframes ranger-frames {
-
     0%, 100% { background-position-x: 0%; }
-
     16% { background-position-x: 20%; }
-
     32% { background-position-x: 40%; }
-
     40% { background-position-x: 60%; }
-
     64% { background-position-x: 80%; }
-
     80% { background-position-x: 100%; }
-
   }
-
-
 
   @media (prefers-reduced-motion: reduce) {
-
     .figurina-wrap, .figurina-wrap::before, .figurina-wrap::after {
-
       transition: none;
-
     }
-
     .figurina-wrap[data-no-bubble] .figurina { transition: none; }
-
     .figurina-wrap[data-no-bubble]:is(:hover, :focus-within) .figurina { transform: none; }
-
     #rangers-modal .modal-content { animation: none; }
-
   }
-
-
 
   /* Fumetto (testo preso da data-bubble) */
-
   .figurina-wrap::after {
-
     content: attr(data-bubble);
-
     position: absolute;
-
     left: 50%;
-
     top: 0;
-
     transform: translate(-50%, -120%) scale(0.95);
-
     padding: 6px 10px;
-
     background: #ffffff;
-
     color: #333;
-
     font-size: 14px;
-
     border-radius: 999px;
-
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-
     white-space: nowrap;
-
     opacity: 0;
-
     pointer-events: none;
-
     transition: opacity 0.2s ease, transform 0.2s ease;
-
     z-index: 2;
-
   }
-
-
 
   /* Triangolino del fumetto */
-
   .figurina-wrap::before {
-
     content: "";
-
     position: absolute;
-
     left: 50%;
-
     top: 0;
-
     transform: translate(-50%, -35%);
-
     border-width: 8px 8px 0 8px;
-
     border-style: solid;
-
     border-color: #ffffff transparent transparent transparent;
-
     opacity: 0;
-
     pointer-events: none;
-
     transition: opacity 0.2s ease, transform 0.2s ease;
-
     z-index: 1;
-
   }
-
-
 
   /* Mostra fumetto in hover */
-
   .figurina-wrap:is(:hover, :focus-within)::after,
-
   .figurina-wrap:is(:hover, :focus-within)::before {
-
     opacity: 1;
-
     transform: translate(-50%, -140%);
-
   }
-
-
 
   /* solo per spaziarle un po' */
-
   .figurina-wrap + .figurina-wrap {
-
     margin-left: 15px;
-
   }
-
   
-
   /* Modal overlay styles */
-
   .modal-overlay {
-
     display: none;
-
     position: fixed;
-
     top: 0;
-
     left: 0;
-
     width: 100%;
-
     height: 100%;
-
     background: rgba(0, 0, 0, 0.85);
-
     z-index: 9999;
-
     justify-content: center;
-
     align-items: center;
-
   }
-
   
-
   .modal-overlay.show {
-
     display: flex;
-
   }
-
   
-
   .modal-content {
-
     background: white;
-
     padding: 90px 80px 60px;
-
     border-radius: 20px;
-
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-
     position: relative;
-
     animation: modalPop 0.3s ease;
-
   }
-
   
-
   @keyframes modalPop {
-
     from { transform: scale(0.8); opacity: 0; }
-
     to { transform: scale(1); opacity: 1; }
-
   }
-
   
-
   .modal-close {
-
     position: absolute;
-
     top: 15px;
-
     right: 20px;
-
     font-size: 40px;
-
     cursor: pointer;
-
     color: #999;
-
     font-weight: 300;
-
     line-height: 1;
-
   }
-
   
-
   .modal-close:hover {
-
     color: #333;
-
   }
-
-
 
 /* Overlay should scroll if content is taller than the viewport */
-
 .modal-overlay {
-
   overflow-y: auto;
-
   -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
-
   padding: 20px;                    /* keeps content away from edges */
-
 }
-
-
 
 /* Modal box should never exceed screen height */
-
 .modal-content {
-
   max-height: calc(100vh - 40px); /* viewport minus overlay padding */
-
   overflow-y: auto;
-
   max-width: 900px;
-
   width: min(900px, 100%);
-
   box-sizing: border-box;
-
 }
-
-
 
 /* Lock background scroll when modal is open */
-
 body.modal-open {
-
   overflow: hidden;
-
 }
-
-
 
   /* Larger size for modal */
-
   .modal-overlay .figurina-wrap {
-
     --figurina-size: 100px;
-
     --glow-radius: 20px;
-
   }
-
   
-
   .modal-overlay .figurina-wrap + .figurina-wrap {
-
     margin-left: 0 !important;
-
   }
-
   
-
   .modal-row {
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   gap: 25px;  /* default desktop gap */
-
   text-align: center;
-
 }
-
-
 
 /* Adapt figure size for modal when on phone */
-
 @media (max-width: 650px) {
-
   .modal-row {
-
     gap: clamp(6px, 1vw, 16px);
-
     flex-wrap: wrap;
-
   }
-
   .modal-overlay .figurina-wrap {
-
     --figurina-size: clamp(
-
       18px,          /* hard minimum */
-
       15.4vw,        /* ≈ 100px at 650px */
-
       100px          /* same size as desktop */
-
     );
-
     --glow-radius: calc(var(--figurina-size) * 0.18);
-
   }
-
   .modal-content {
-
     padding: 80px 15px 50px;
-
     border-radius: 15px;
-
   }
-
 }
 
-
+/* Explosive halo: a burst of the Ranger's colour across the screen */
+.ranger-burst {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  overflow: hidden;
+}
+/* A soft-edged disc that expands from the Ranger and fades out */
+.ranger-burst::before {
+  content: "";
+  position: absolute;
+  left: var(--bx);
+  top: var(--by);
+  width: 300vmax;
+  height: 300vmax;
+  border-radius: 50%;
+  background: radial-gradient(circle closest-side,
+    #fff 0, var(--burst-color) 10%, var(--burst-color) 35%, transparent 100%);
+  transform: translate(-50%, -50%) scale(0);
+  animation: ranger-burst .5s ease-out forwards;
+}
+@keyframes ranger-burst {
+  0%   { transform: translate(-50%, -50%) scale(0);  opacity: .9; }
+  35%  { opacity: .7; }
+  100% { transform: translate(-50%, -50%) scale(1);  opacity: 0; }
+}
 
 /* hide bubble when is data-no-bubble */
-
 .figurina-wrap[data-no-bubble]::after,
-
 .figurina-wrap[data-no-bubble]::before {
-
   content: none !important;
-
   display: none !important;
-
 }
-
 </style>
 
 
-
-
-
 <!-------------------------------------------------------------->
-
 <!-------------------------------------------------------------->
-
-
 
 <!-- REGULAR FOOTER -->
 
-
-
 <div class="rangers-footer" style="
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   gap: 3px;
-
   text-align: center;
-
-  padding: 20px;
-
+  padding: 20px 20px 36px; /* room for the zoomed Ranger: no scrollbar on hover */
 ">
 
-
-
   <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/black.png');
-
               --glow-color: rgba(0, 0, 0, 0.95);" data-bubble="Filippo Gambarota" data-move="leap">
-
     <a href="https://filippogambarota.github.io/" target="_blank" aria-label="Filippo Gambarota"><div class="figurina"></div></a>
-
   </div>
-
-
 
   <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/purple.png');
-
               --glow-color: rgba(200, 0, 255, 0.95);" data-bubble="Margherita Calderan" data-move="twirl">
-
     <a href="https://mar-cald.github.io/" target="_blank" aria-label="Margherita Calderan"><div class="figurina"></div></a>
-
   </div>
-
-
 
   <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/red.png');
-
               --glow-color: rgba(220, 0, 0, 0.95);" data-bubble="Enrico Toffalini" data-move="strike">
-
     <a href="https://enricotoffalini.github.io/" target="_blank" aria-label="Enrico Toffalini"><div class="figurina"></div></a>
-
   </div>
-
-
 
   <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/green.png');
-
               --glow-color: rgba(100, 150, 50, 0.95);" data-bubble="Tommaso Feraco" data-move="kick">
-
     <a href="https://feracotommaso.github.io/" target="_blank" aria-label="Tommaso Feraco"><div class="figurina"></div></a>
-
   </div>
-
-
 
 </div>
 
-
-
 <!-------------------------------------------------------------->
-
 <!-------------------------------------------------------------->
-
-
 
 <!-- MODAL OVERLAY -->
 
-
-
 <div id="rangers-modal" class="modal-overlay">
-
   <div class="modal-content">
-
     <span class="modal-close" onclick="closeRangersModal()">×</span>
-
     
-
     <!-- Power Rangers -->
-
     <div class="modal-row">
-
       
-
 <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/black.png');
-
               --glow-color: rgba(0, 0, 0, 0.95);" data-bubble="Filippo Gambarota" data-move="leap">
-
     <a href="https://filippogambarota.github.io/" target="_blank" aria-label="Filippo Gambarota"><div class="figurina"></div></a>
-
   </div>
-
-
 
   <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/purple.png');
-
               --glow-color: rgba(200, 0, 255, 0.95);" data-bubble="Margherita Calderan" data-move="twirl">
-
     <a href="https://mar-cald.github.io/" target="_blank" aria-label="Margherita Calderan"><div class="figurina"></div></a>
-
   </div>
-
-
 
   <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/red.png');
-
               --glow-color: rgba(220, 0, 0, 0.95);" data-bubble="Enrico Toffalini" data-move="strike">
-
     <a href="https://enricotoffalini.github.io/" target="_blank" aria-label="Enrico Toffalini"><div class="figurina"></div></a>
-
   </div>
-
-
 
   <div class="figurina-wrap" style="--figurina-img: url('images/power-rangers/green.png');
-
               --glow-color: rgba(100, 150, 50, 0.95);" data-bubble="Tommaso Feraco" data-move="kick">
-
     <a href="https://feracotommaso.github.io/" target="_blank" aria-label="Tommaso Feraco"><div class="figurina"></div></a>
 
-
-
     </div></div>
-
     
-
 <!-- Subtitle with link -->
-
 <div style="text-align: center; margin-top: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
-
   <p style="font-size: 18px; color: #000; margin-bottom: 20px;">
-
     Part of </p>
-
     <a href="https://psicostat.dpss.psy.unipd.it/pages/people.html" target="_blank" class="figurina-wrap" style="--glow-color: rgba(118, 0, 0, 0.95);
-
               --figurina-size: 150px;
-
               --glow-radius: 40px;" data-no-bubble="">
-
       <img class="figurina psicostat-logo" src="images/psicostat.png" alt="Psicostat" width="150" height="150">
-
     </a>
-
       <p style="font-size: 16px; color: #000; line-height: 1.6; margin-top: 15px;">
-
     We are an interdisciplinary research group interested in Psychology and Statistics, working in areas related to quantitative psychology, psychometrics, psychological testing and statistics. Our mission is to promote the connection between the two fields in order to benefit the progress of scientific research.
-
   </p>
-
 </div>
-
-
 
     
-
   </div>
-
 </div>
-
-
-
 
 
 <script>
-
   // Keep the original PNG visible until the entire sprite sheet is available.
-
   (function () {
-
     const sheet = new Image();
-
     sheet.onload = function () {
-
       document.querySelectorAll('.figurina-wrap[data-move]').forEach(function (figure) {
-
         figure.classList.add('ranger-ready');
-
       });
-
     };
-
     sheet.src = 'images/power-rangers/moves-power-clean.webp';
-
   })();
 
-
+  // Explosive halo of the Ranger's colour when the move starts.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function burst(figure) {
+      const now = Date.now();
+      if (now - (figure._burstAt || 0) < 700) return; // hover + focus = one burst
+      figure._burstAt = now;
+      const r = figure.getBoundingClientRect();
+      const b = document.createElement('div');
+      b.className = 'ranger-burst';
+      b.style.setProperty('--bx', (r.left + r.width / 2) + 'px');
+      b.style.setProperty('--by', (r.top + r.height / 2) + 'px');
+      b.style.setProperty('--burst-color', getComputedStyle(figure).getPropertyValue('--glow-color'));
+      setTimeout(function () { b.remove(); }, 600);
+      document.body.appendChild(b);
+    }
+    document.querySelectorAll('.figurina-wrap[data-move]').forEach(function (figure) {
+      figure.addEventListener('mouseenter', function () { burst(figure); });
+      figure.addEventListener('focusin', function () { burst(figure); });
+    });
+  })();
 
   function openRangersModal() {
-
     document.getElementById('rangers-modal').classList.add('show');
-
     document.body.classList.add('modal-open');
-
   }
-
-
 
   function closeRangersModal() {
-
     document.getElementById('rangers-modal').classList.remove('show');
-
     document.body.classList.remove('modal-open');
-
   }
 
-
-
   document.getElementById('rangers-modal').addEventListener('click', function(e) {
-
     if (e.target === this) closeRangersModal();
-
   });
-
-
 
   document.addEventListener('keydown', function(e) {
-
     if (e.key === 'Escape') closeRangersModal();
-
   });
-
-
 
   document.addEventListener('DOMContentLoaded', function() {
-
     const navbarBrand = document.querySelector('.navbar-brand');
-
     if (navbarBrand) {
-
       navbarBrand.style.cursor = 'pointer';
-
       navbarBrand.addEventListener('click', function(e) {
-
         e.preventDefault();
-
         openRangersModal();
-
       });
-
     }
-
   });
-
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
